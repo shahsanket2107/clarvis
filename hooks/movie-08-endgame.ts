@@ -1,0 +1,226 @@
+// AVENGERS THEATER #8: ENDGAME, the mega finale. Pure data: see saga-types.ts.
+import type { Movie } from './saga-types'
+
+export const MOVIE_08: Movie = {
+  id: 'endgame', n: 8, title: 'ENDGAME', color: '#D4A017', hero: 'CAP',
+  blurb: 'Whatever it takes. One last time.',
+  scenes: [
+    {
+      cap: 'FIVE YEARS LATER.', bg: 'farm', beats: [
+        { k: 'est', l: 'IRONMAN', r: 'PEPPER', cap: 'FIVE YEARS LATER.', ext: [] },
+        { k: 'talk', d: 3.5, lines: [
+          ['r', ['Tony, the cheeseburger. Morgan wants her cheeseburger.', "Tony, that's the third time this week you've stared at the lake."]],
+          ['l', ["I love you 3000. Don't tell her. It's a secret.", "I'm not staring. I'm running a long, slow build in my head."]],
+          ['r', "You can stop. You're allowed to stop, Tony."],
+        ] },
+        { k: 'say', d: 3, by: 'l', say: "~Half of everyone's gone. And my laptop still says tests failed." },
+        { k: 'enter', l: 'IRONMAN', r: 'ANTMAN', sfx: 'BAMP!', cap: 'A RAT-VAN IN THE DRIVEWAY.', ext: ['PEPPER', 'WARMACHINE', 'HULK'] },
+        { k: 'talk', d: 3.5, lines: [
+          ['r', ["Tony! It's me! Scott! Five years in the Quantum Realm felt like five minutes!", "Tony, I was in the Quantum Realm! Five minutes! I swear!"]],
+          ['l', "Scott. Hey. You were gone. Say that again, slower."],
+          ['r', "Time travel. We can win. Probably. Hear me out."],
+        ] },
+        { k: 'exit' },
+      ],
+    },
+    {
+      cap: 'THE LAB. A BAD IDEA, BUILT TWICE.', bg: 'lab', beats: [
+        { k: 'est', l: 'IRONMAN', r: 'HULK', cap: 'THE LAB. A BAD IDEA, BUILT TWICE.', ext: ['ANTMAN', 'ROCKET', 'NEBULA', 'WARMACHINE'] },
+        { k: 'talk', d: 3.5, lines: [
+          ['l', "Okay, Bruce. We grab the Stones from the past. In theory."],
+          ['r', ["Time isn't a straight line. Don't cross your own streams.", "In theory. Don't touch your own self. And don't hit any buttons."]],
+          ['l', ["Rule one: nothing merges to main. Rule two: no new dependencies.", "I'll write the tests this time. Promise."]],
+        ] },
+        { k: 'say', d: 3, by: 'ANTMAN', say: "Too late to change the name? Because Time Heist is catchy." },
+        { k: 'say', d: 3, by: 'IRONMAN', say: "We're not calling it that." },
+        { k: 'special', l: 'IRONMAN', r: 'HULK', by: 'l', fx: 'portal', sfx: 'ZWOOOP!' },
+        { k: 'exit' },
+      ],
+    },
+    {
+      cap: 'AVENGERS COMPOUND. THE PLAN.', bg: 'shield', beats: [
+        { k: 'est', l: 'CAP', r: 'WIDOW', cap: 'AVENGERS COMPOUND. THE PLAN.', ext: ['HULK', 'ANTMAN', 'WARMACHINE'] },
+        { k: 'arrive', who: ['ROCKET', 'NEBULA'], fx: 'teleport', cap: 'ROCKET AND NEBULA.' },
+        { k: 'arrive', who: ['HAWKEYE', 'THOR'], fx: 'teleport', cap: 'CLINT. AND A VERY RELAXED THOR.' },
+        { k: 'talk', d: 3.5, l: 'CAP', r: 'WIDOW', lines: [
+          ['l', "Six Stones, six teams. Grab them, bring them back. Clean in, clean out."],
+          ['r', ["Last time you said clean in, clean out, you hit a car.", "Steve, this team has never done a clean in-and-out."]],
+          ['l', "Then we'll hit the car quietly this time."],
+        ] },
+        { k: 'talk', d: 3.5, l: 'THOR', r: 'ROCKET', ext: ['CAP', 'WIDOW', 'HAWKEYE', 'NEBULA', 'HULK'], lines: [
+          ['l', ["I'll find my Mjolnir. And an axe for my axe.", "My mother's there. I'm going to say hi. Don't wait up."]],
+          ['r', ["Pal, you're a fridge in a bathrobe. You can't be quiet.", "You're way too big for stealth, Big Guy."]],
+        ] },
+        { k: 'exit' },
+      ],
+    },
+    {
+      cap: 'MEANWHILE, IN 2012...', bg: 'city', beats: [
+        { k: 'est', l: 'CAP', r: 'HULK', cap: 'MEANWHILE, IN 2012...', ext: ['IRONMAN', 'ANTMAN', 'COULSON'] },
+        { k: 'talk', d: 3.5, lines: [
+          ['l', "Bruce, New York. Grab the Stone. Don't break a single thing."],
+          ['r', ["I'm the Hulk. Breaking things is the whole brand.", "I'll be careful. Banner. Careful. Soft."]],
+        ] },
+        { k: 'enter', l: 'CAP', r: 'LOKI', cap: 'THE CITY, IN THE MIDDLE OF A PARTY.', ext: ['HULK', 'IRONMAN', 'COULSON', 'MARIA'], brawl: true },
+        { k: 'talk', d: 3.5, lines: [
+          ['r', ["Hello, mortal. Do you know who I am?", 'Please, tell me you came to kneel.']],
+          ['l', "Yes. And I'm very sorry about this."],
+        ] },
+        { k: 'special', by: 'l', fx: 'shield', sfx: 'CLANG!' },
+        { k: 'enter', l: 'CAP', r: 'CAP', cap: 'ELEVATOR. CAP MEETS CAP.', ext: ['LOKI', 'COULSON', 'MARIA'], brawl: false },
+        { k: 'talk', d: 3.5, lines: [
+          ['r', 'I can do this all day.'],
+          ['l', ["I know you can. I was gonna say that.", "I know you can. I said that once. Big mistake."]],
+          ['r', ["!Language! Wait. Why is there two of me?", '!Hail H... wait. What on Earth?!']],
+          ['l', "Stand down, kid. Long story. Mostly about stairs."],
+        ] },
+        { k: 'trade', n: 3 },
+        { k: 'ko', win: '?', sfx: ['KRAKA-THUD!', 'BWAMM!'] },
+        { k: 'say', d: 3, by: 'l', say: "Sorry, kid. Told you. I'm the one keeping the shield." },
+        { k: 'exit' },
+      ],
+    },
+    {
+      cap: '2014. A SHIP IN ORBIT.', bg: 'ship', beats: [
+        { k: 'est', l: 'NEBULA', r: 'NEBULA', cap: '2014. A SHIP IN ORBIT.', ext: ['THANOS', 'GAMORA', 'MAW', 'CHITAURI'] },
+        { k: 'talk', d: 3.5, lines: [
+          ['l', ["You're me. And you're going to lose.", "You're what I'll become. I hope I get better lighting."]],
+          ['r', ["I'm the best of Thanos's daughters. You're a mess.", "Prove it. Come on. One bad copy at a time."]],
+        ] },
+        { k: 'trade', n: 3 },
+        { k: 'special', by: 'l', fx: 'dagger', sfx: 'SHING!' },
+        { k: 'ko', win: 'l', sfx: 'THUD.' },
+        { k: 'say', d: 3, by: 'l', say: "~Now. I'm the only Nebula who can fix this." },
+        { k: 'exit' },
+      ],
+    },
+    {
+      cap: 'THE PAST REMEMBERS.', bg: 'void', beats: [
+        { k: 'est', cap: 'THE PAST REMEMBERS.' },
+        { k: 'crowd', who: ['LOKI', 'ULTRON', 'HELA', 'GRANDMASTER', 'KILLMONGER', 'FURY', 'COULSON', 'MARIA', 'YONDU', 'JARVIS', 'MBAKU'], rw: ['DRONE', 'CHITAURI'], cap: 'FACES FROM THE LONG ROAD.' },
+        { k: 'say', d: 3, by: 'FURY', say: "Best crew I ever had. Worst paperwork I ever filed." },
+        { k: 'say', d: 3, by: 'JARVIS', say: "All systems nominal, sir. Nothing's been deleted. Probably." },
+      ],
+    },
+    {
+      cap: 'THE COMPOUND. THE WRONG VISITOR.', bg: 'ruins', beats: [
+        { k: 'est', l: 'THOR', r: 'THANOS', cap: 'THE COMPOUND. THE WRONG VISITOR.', ext: ['HULK', 'ROCKET', 'WIDOW', 'HAWKEYE'] },
+        { k: 'enter', l: 'THOR', r: 'THANOS', sfx: 'THOOM!', cap: 'THANOS. FROM 2014. UNINVITED.' },
+        { k: 'talk', d: 3.5, lines: [
+          ['r', ['You could not live with your own failure. Where did that bring you? Back to me.', "I will shred this universe down to its last atom."]],
+          ['l', ['!Then you will have to get past me.', "!I don't have to listen to you."]],
+        ] },
+        { k: 'special', by: 'l', fx: 'bolt', sfx: 'KRAKA-THOOM!' },
+        { k: 'special', by: 'r', fx: 'gauntlet', sfx: 'KRAKOW!' },
+        { k: 'enter', l: 'IRONMAN', r: 'THANOS', cap: 'IRON MAN. WITH A NEW SUIT.', ext: ['THOR', 'CAP', 'HULK', 'ROCKET'], brawl: true },
+        { k: 'special', by: 'l', fx: 'unibeam', sfx: 'ZZZWAAM!' },
+        { k: 'enter', l: 'CAP', r: 'THANOS', cap: 'CAP. WITH A BROKEN SHIELD.' },
+        { k: 'teamup', move: 'thorcap', who: ['THOR', 'CAP', 'IRONMAN', 'HULK'], rw: ['CHITAURI', 'DRONE', 'MAW'], cap: 'THOR CHARGES THE SHIELD. SHOCKWAVE.', sfx: 'KRAKA-THOOM!' },
+        { k: 'trade', n: 3 },
+        { k: 'clash', fx: 'gauntlet', sfx: 'CLANG!' },
+        { k: 'ko', l: 'CAP', r: 'THANOS', win: 'r', sfx: 'KRAK!' },
+        { k: 'talk', d: 3.5, l: 'CAP', r: 'THANOS', lines: [
+          ['r', "Fine. I'll do it myself."],
+          ['l', "~Get up, Steve. Just one more time."],
+        ] },
+        { k: 'special', by: 'l', fx: 'hammer', sfx: 'KRAKA-THOOM!' },
+        { k: 'say', d: 3, by: 'THOR', say: '!I knew it! I knew it! I KNEW it!' },
+        { k: 'clash', fx: 'hammer', sfx: 'KRAKA-THOOM!' },
+        { k: 'ko', l: 'CAP', r: 'THANOS', win: 'r', sfx: 'THOOM.' },
+        { k: 'say', d: 3, by: 'THANOS', say: '!I am inevitable.' },
+      ],
+    },
+    {
+      cap: 'THE END OF HOPE. NEARLY.', bg: 'ruins', beats: [
+        { k: 'est', l: 'CAP', r: 'CHITAURI', cap: 'THE END OF HOPE. NEARLY.' },
+        { k: 'charge', who: ['CHITAURI', 'DRONE', 'MAW'], rw: ['CAP'], cap: 'AN ARMY OF A THOUSAND MORE.' },
+        { k: 'say', d: 3, by: 'l', say: "~Alone. The shield's broken. The wrist isn't much better.", ext: [] },
+        { k: 'say', d: 3, by: 'FALCON', say: "Cap, you gotta remember to look to your left." },
+        { k: 'say', d: 3, by: 'CAP', say: "Sam. I'm on my own, Sam." },
+        { k: 'say', d: 3, by: 'FALCON', say: 'Not even close. On your left.' },
+        { k: 'arrive', who: ['FALCON', 'WARMACHINE', 'BUCKY'], fx: 'portal', cap: 'FALCON. WAR MACHINE. BUCKY.' },
+        { k: 'arrive', who: ['PANTHER', 'SHURI', 'OKOYE', 'DORA'], fx: 'portal', cap: 'WAKANDA FOREVER.' },
+        { k: 'arrive', who: ['MBAKU', 'KILLMONGER'], fx: 'portal', cap: 'THE RIVER AND THE HEART.' },
+        { k: 'arrive', who: ['STRANGE', 'WONG'], fx: 'portal', cap: 'STRANGE AND WONG. SPELLS READY.' },
+        { k: 'arrive', who: ['STARLORD', 'GAMORA', 'DRAX', 'MANTIS', 'YONDU'], fx: 'portal', cap: 'THE GUARDIANS ARRIVE.' },
+        { k: 'arrive', who: ['ROCKET', 'GROOT', 'NEBULA'], fx: 'portal', cap: 'THE RACCOON AND THE TREE.' },
+        { k: 'arrive', who: ['WANDA'], fx: 'hex', cap: 'WANDA. AND SHE IS ANGRY.' },
+        { k: 'arrive', who: ['SPIDEY'], fx: 'web', cap: 'THE FRIENDLY NEIGHBORHOOD ARRIVES.' },
+        { k: 'arrive', who: ['VALKYRIE', 'KORG'], fx: 'wings', cap: 'VALKYRIE. WITH HER PEGASUS.' },
+        { k: 'arrive', who: ['PEPPER', 'RESCUE'], fx: 'unibeam', cap: 'RESCUE. SHE IS BACK.' },
+        { k: 'arrive', who: ['ANTMAN'], fx: 'shrink', cap: 'ANT-MAN. SMALL, THEN...' },
+        { k: 'arrive', who: ['GIANTMAN'], fx: 'smash', cap: '...GIANT-MAN.' },
+        { k: 'arrive', who: ['CMARVEL'], fx: 'photon', cap: 'AND THEN, CAPTAIN MARVEL.' },
+        { k: 'arrive', who: ['DEADPOOL', 'WOLVERINE'], fx: 'teleport', cap: 'WRONG PORTAL. WE LIKE IT.' },
+        { k: 'say', d: 3, by: 'DEADPOOL', say: "Wrong movie? Wrong movie. We're staying anyway.", l: 'DEADPOOL', r: 'CAP', ext: ['WOLVERINE', 'FALCON', 'PANTHER', 'STRANGE', 'STARLORD'] },
+        { k: 'teamup', move: 'formation', who: ['STARLORD', 'WARMACHINE', 'STRANGE', 'FALCON', 'PANTHER', 'WANDA'], rw: ['CHITAURI', 'DRONE', 'MAW', 'CHITAURI', 'DRONE'], cap: 'THE LINE OPENS FIRE.', sfx: 'KA-BOOM!' },
+      ],
+    },
+    {
+      cap: 'ASSEMBLE.', bg: 'ruins', beats: [
+        { k: 'est', l: 'CAP', r: 'THANOS', cap: 'ASSEMBLE.', ext: ['IRONMAN', 'THOR', 'HULK', 'PANTHER', 'CMARVEL'] },
+        { k: 'say', d: 3, by: 'THANOS', say: 'I am inevitable.' },
+        { k: 'say', d: 3, by: 'CAP', say: 'Avengers... assemble.' },
+        { k: 'crowd', who: ['CAP', 'IRONMAN', 'THOR', 'HULK', 'HULKBUSTER', 'BUCKY', 'FALCON', 'ANTMAN', 'GIANTMAN', 'HAWKEYE', 'WANDA', 'WARMACHINE', 'WIDOW', 'PANTHER', 'SPIDEY', 'VISION', 'STRANGE', 'WONG', 'STARLORD', 'GAMORA', 'DRAX', 'ROCKET', 'GROOT', 'MANTIS', 'NEBULA', 'YONDU', 'SHURI', 'OKOYE', 'DORA', 'MBAKU', 'KORG', 'VALKYRIE', 'RESCUE', 'PEPPER', 'CMARVEL', 'DEADPOOL', 'WOLVERINE', 'FURY', 'COULSON', 'MARIA', 'JARVIS', 'KILLMONGER', 'LOKI'], rw: ['THANOS', 'CHITAURI', 'MAW', 'DRONE'], cap: 'EVERYONE. EVERY HERO. ALL AT ONCE.', d: 10 },
+        { k: 'charge', who: ['CAP', 'THOR', 'HULK', 'PANTHER', 'CMARVEL', 'SPIDEY', 'STRANGE', 'WANDA', 'IRONMAN', 'GIANTMAN', 'STARLORD', 'VALKYRIE'], rw: ['THANOS', 'CHITAURI', 'MAW', 'DRONE'], cap: 'THE CHARGE.', d: 8 },
+        { k: 'battle', who: ['THOR', 'PANTHER', 'STRANGE', 'GROOT', 'SPIDEY', 'ROCKET'], rw: ['CHITAURI', 'DRONE', 'MAW', 'CHITAURI', 'DRONE', 'CHITAURI'], cap: 'THE FIELD ERUPTS.', d: 14 },
+        { k: 'teamup', move: 'bounce', who: ['CAP', 'IRONMAN', 'HAWKEYE', 'FALCON'], rw: ['CHITAURI', 'DRONE', 'MAW'], cap: 'THE SHIELD OFF THE REPULSOR.', sfx: 'CLANG-ANG-ANG!' },
+        { k: 'teamup', move: 'fastball', who: ['HULK', 'ANTMAN', 'WIDOW'], rw: ['MAW', 'CHITAURI'], cap: 'FASTBALL SPECIAL.', sfx: 'BAMF!' },
+        { k: 'super', l: 'WANDA', r: 'THANOS', by: 'l', fx: 'hex', sfx: 'ZZZWAP!', ext: ['CAP', 'THOR', 'CMARVEL', 'PANTHER', 'VALKYRIE'], brawl: true },
+        { k: 'talk', d: 3.5, l: 'WANDA', r: 'THANOS', lines: [
+          ['r', "You... you could not live with your own failure."],
+          ['l', "!You took everything from me."],
+          ['r', "I don't even know who you are."],
+          ['l', '!You will.'],
+        ] },
+        { k: 'super', l: 'WANDA', r: 'THANOS', by: 'l', fx: 'hex', sfx: 'WHAMMM!' },
+        { k: 'special', l: 'THANOS', r: 'WANDA', by: 'l', fx: 'gauntlet', sfx: 'KRAKOW!' },
+        { k: 'clash', fx: 'gauntlet', sfx: 'CLANG!' },
+        { k: 'enter', l: 'THANOS', r: 'CMARVEL', cap: 'CAPTAIN MARVEL. NOT PLAYING.', ext: ['WANDA', 'THOR', 'CAP', 'PANTHER', 'SPIDEY'] },
+        { k: 'super', l: 'CMARVEL', r: 'THANOS', by: 'l', fx: 'photon', sfx: 'KA-BLAMMM!' },
+        { k: 'trade', n: 4 },
+        { k: 'talk', d: 3.5, lines: [
+          ['l', ["Let me guess. You weren't expecting us?", "Let me guess. You're inevitable. Well, I'm the Captain."]],
+          ['r', "Why won't you fall? Ahh..."],
+        ] },
+        { k: 'super', l: 'THANOS', r: 'CMARVEL', by: 'l', fx: 'gauntlet', sfx: 'KRAKA-THOOM!' },
+        { k: 'ko', l: 'THANOS', r: 'CMARVEL', win: 'l', sfx: 'BOOOM.' },
+        { k: 'say', d: 3, by: 'PANTHER', say: "Captain. We won't let her fall. The wall holds.", ext: ['WANDA', 'THOR', 'CAP', 'SPIDEY', 'VALKYRIE'] },
+        { k: 'crowd', who: ['CAP', 'THOR', 'HULK', 'PANTHER', 'SPIDEY', 'WANDA', 'STRANGE', 'CMARVEL', 'VALKYRIE', 'OKOYE', 'GROOT', 'ROCKET', 'FALCON', 'BUCKY'], rw: ['THANOS'], cap: 'THEY HOLD THE LINE.', d: 6 },
+      ],
+    },
+    {
+      cap: 'THE GAUNTLET.', bg: 'ruins', beats: [
+        { k: 'est', l: 'IRONMAN', r: 'THANOS', cap: 'THE GAUNTLET.', ext: ['SPIDEY', 'CAP', 'THOR', 'STRANGE', 'HULK'] },
+        { k: 'say', d: 3, by: 'SPIDEY', say: "Mr. Stark! I've got the Stones! Well, the gauntlet. Sort of." },
+        { k: 'say', d: 3, by: 'IRONMAN', say: "Kid, you're doing great. Hand it over. Slowly. Easy." },
+        { k: 'talk', d: 3.5, l: 'THANOS', r: 'IRONMAN', lines: [
+          ['l', ["I am... inevitable.", '!I am inevitable. I will be a god. I am inevitable.']],
+          ['r', ['And I... am... Iron Man.', "!You should've wiped the repo first. I am Iron Man."]],
+        ] },
+        { k: 'snap', by: 'IRONMAN', who: ['THANOS', 'CHITAURI', 'MAW', 'DRONE'], cap: 'SNAP. THE ARMY DRIFTS AWAY LIKE DUST.' },
+        { k: 'stand', l: 'IRONMAN', say: 'The dust settles. Only heroes remain.', ext: ['SPIDEY', 'CAP', 'THOR', 'STRANGE', 'HULK'] },
+      ],
+    },
+    {
+      cap: 'AFTER THE BATTLE.', bg: 'night', beats: [
+        { k: 'est', l: 'IRONMAN', r: 'PEPPER', cap: 'AFTER THE BATTLE.', ext: [] },
+        { k: 'talk', d: 3.5, lines: [
+          ['r', ["Tony. Tony. Look at me. We're going to be okay.", "Tony, look at me. It's done. We'll be okay."]],
+          ['l', "~Hey, Pep. I see Morgan. I see Rhodey. Everyone's here."],
+          ['r', "You can rest now, Tony."],
+        ] },
+        { k: 'say', d: 3, by: 'CAP', say: "He did it. The one thing none of us could.", l: 'IRONMAN', r: 'PEPPER', ext: ['CAP', 'SPIDEY', 'THOR', 'HULK', 'WARMACHINE'] },
+        { k: 'say', d: 3, by: 'SPIDEY', say: "Mr. Stark... we did it. All the tests passed. Thank you." },
+        { k: 'crowd', who: ['CAP', 'THOR', 'HULK', 'WIDOW', 'HAWKEYE', 'FALCON', 'BUCKY', 'WANDA', 'SPIDEY', 'STRANGE', 'WONG', 'PANTHER', 'OKOYE', 'STARLORD', 'GAMORA', 'DRAX', 'ROCKET', 'GROOT', 'MANTIS', 'NEBULA', 'CMARVEL', 'VALKYRIE', 'ANTMAN', 'PEPPER', 'WARMACHINE', 'SHURI'], rw: [], cap: 'EVERY HERO, SILENT.', d: 7 },
+        { k: 'talk', d: 3.5, lines: [
+          ['TEAM', ['We love you 3000.', 'Rest easy, Tony. The build is green.']],
+          ['PEPPER', "The lake. The porch. He'd want us to go home."],
+        ] },
+        { k: 'stand', l: 'CAP', r: 'FALCON', ext: ['THOR', 'BUCKY', 'WIDOW', 'SPIDEY', 'HAWKEYE'], say: 'Cap hands over the shield. He earned the rest.' },
+        { k: 'say', d: 3, by: 'CAP', say: "Sam. It's yours, if you want it. Just do it right." },
+        { k: 'card', say: 'THE AVENGERS WILL RETURN', cap: 'ENDGAME' },
+      ],
+    },
+  ],
+}

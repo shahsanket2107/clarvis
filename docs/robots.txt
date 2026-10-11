@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shahsanket2107.github.io/clarvis/sitemap.xml

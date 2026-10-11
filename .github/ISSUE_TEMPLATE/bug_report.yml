@@ -1,0 +1,36 @@
+name: Bug report
+description: Something looks wrong or doesn't work
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you saw. A screenshot helps a lot.
+    validations:
+      required: true
+  - type: input
+    id: claude
+    attributes:
+      label: Claude Code version
+      description: Output of `claude --version`
+    validations:
+      required: true
+  - type: input
+    id: terminal
+    attributes:
+      label: Terminal, OS and size
+      description: e.g. Ghostty 1.2 on macOS 15, 120x40, inside tmux or not
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options: [full, calm, off]
+  - type: textarea
+    id: debug
+    attributes:
+      label: Debug log lines (optional)
+      description: Run `claude --debug` and paste lines that mention clarvis.
+      render: text

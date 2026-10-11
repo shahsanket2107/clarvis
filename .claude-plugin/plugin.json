@@ -1,0 +1,59 @@
+{
+  "name": "clarvis",
+  "version": "1.0.0",
+  "description": "Clarvis: an unofficial Avengers fan mod for Claude Code, with a live HUD, token, cost and rate-limit metrics, end-of-turn moments, a pixel arcade and a comic theater. Free, not affiliated with Marvel or Disney.",
+  "author": {
+    "name": "Sanket Shah"
+  },
+  "homepage": "https://shahsanket2107.github.io/clarvis/",
+  "repository": "https://github.com/shahsanket2107/clarvis",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "mod",
+    "hud",
+    "statusline",
+    "token-usage",
+    "cost",
+    "avengers-fan-project",
+    "pixel-art",
+    "arcade",
+    "chiptune",
+    "tui"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "mode": {
+      "type": "string",
+      "title": "Look",
+      "description": "Which look Clarvis starts in: auto (full art, or lite text on a 256-colour terminal), full, calm (no motion), lite (text rows only) or off (stock). CLARVIS and a /clarvis <mode> choice take priority.",
+      "options": [
+        "auto",
+        "full",
+        "calm",
+        "lite",
+        "off"
+      ],
+      "default": "auto"
+    },
+    "showCost": {
+      "type": "boolean",
+      "title": "Show cost",
+      "description": "Show dollar amounts in the band, the end-of-turn moments and /clarvis stats.",
+      "default": true
+    },
+    "notifyAfterMinutes": {
+      "type": "number",
+      "title": "Notify after (minutes)",
+      "description": "Send a native notification when a turn that ran at least this many minutes finishes. 0 turns it off. /clarvis notify <minutes|off> takes priority.",
+      "default": 0,
+      "min": 0
+    },
+    "sound": {
+      "type": "boolean",
+      "title": "Sound",
+      "description": "Play short original chiptune sounds (mission complete, error, trophy) in full mode. Plays on macOS only. Turn off with /clarvis sound off.",
+      "default": true
+    }
+  }
+}

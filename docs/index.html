@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clarvis: an Avengers fan mod for Claude Code</title>
+<meta name="description" content="Clarvis is a free, open-source fan mod for Claude Code. Heroes animate above your prompt while Claude works, with live token, cost and rate-limit metrics, a pixel arcade and a comic theater in your terminal. Install it in one line.">
+<meta name="keywords" content="Clarvis, Claude Code plugin marketplace, Claude Code statusline, Claude Code token usage, Claude Code cost tracker, Claude Code hooks, Avengers, Iron Man, J.A.R.V.I.S., Claude Code, Claude Code plugin, Claude Code mod, Anthropic, terminal UI, TUI, Avengers fan project, token usage, cost tracker, pixel art, terminal game">
+<link rel="canonical" href="https://shahsanket2107.github.io/clarvis/">
+<meta name="theme-color" content="#1d1a45">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="author" content="Sanket Shah">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clarvis">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:image:alt" content="Clarvis: pixel-art heroes animating above the Claude Code prompt">
+<meta property="og:title" content="Clarvis: an Avengers fan mod for Claude Code">
+<meta property="og:description" content="Heroes animate above your prompt while Claude works, with live token and cost metrics, a pixel arcade and a comic theater. Free, open source, one-line install.">
+<meta property="og:url" content="https://shahsanket2107.github.io/clarvis/">
+<meta property="og:image" content="https://shahsanket2107.github.io/clarvis/media/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Clarvis: pixel-art heroes animating above the Claude Code prompt">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clarvis: an Avengers fan mod for Claude Code">
+<meta name="twitter:description" content="Heroes above your prompt, live token and cost metrics, a pixel arcade and a comic theater. Free and open source.">
+<meta name="twitter:image" content="https://shahsanket2107.github.io/clarvis/media/social-preview.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Clarvis",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "macOS, Linux, Windows (Claude Code 2.1.287+)",
+  "description": "A free, open-source fan mod for Claude Code: animated heroes above the prompt, live token, cost and rate-limit metrics, a pixel arcade and a comic theater.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "license": "https://opensource.org/licenses/MIT",
+  "codeRepository": "https://github.com/shahsanket2107/clarvis",
+  "author": { "@type": "Person", "name": "Sanket Shah" }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is Clarvis?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Clarvis is a free, open-source Claude Code plugin, a mod, that draws an Avengers-themed heads-up display above the Claude Code prompt: rotating pixel-art heroes while Claude works, live token, cache and cost tracking, a pixel arcade and a comic theater."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I install Clarvis in Claude Code?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "At the Claude Code prompt, run /plugin install clarvis --marketplace shahsanket2107/clarvis, press y to add the marketplace, then Enter. It needs Claude Code 2.1.287 or later."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does Clarvis track Claude Code token usage and cost?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. The band shows context used, tokens in and out, cache hit rate, the session's cost and your 5-hour rate limit, and /clarvis stats prints a full usage report with lifetime totals."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does Clarvis send any data anywhere?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. It makes no network requests, has no analytics, and never changes a tool call, a prompt or a permission decision. It only watches and draws."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is Clarvis an official Marvel or Anthropic product?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Clarvis is an unofficial, non-commercial fan project. It isn't made, licensed or endorsed by Marvel, Disney or Anthropic, and all of its art is original."
+   }
+  }
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --night: #1d1a45;      /* the arcade's sky */
+  --night-deep: #14122f;
+  --gold: #ffcf3f;       /* the arcade logo */
+  --red: #e2403a;        /* the suit */
+  --arc: #6fd8ff;        /* the reactor */
+  --paper: #ffffff;
+  --muted: #b9b6e0;
+  --ink: #0d0c22;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before { animation: none !important; } }
+body {
+  margin: 0; background: var(--night); color: var(--paper);
+  font: 400 1.0625rem/1.6 "IBM Plex Sans", system-ui, sans-serif;
+}
+a { color: var(--arc); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; padding: 64px 0 40px; }
+.hero::before { /* halftone burst, the one moment of motion */
+  content: ""; position: absolute; inset: -20% -10% auto auto; width: 70vmax; height: 70vmax;
+  background: radial-gradient(circle, rgba(255,207,63,.22) 1.6px, transparent 1.8px) 0 0 / 14px 14px;
+  -webkit-mask: radial-gradient(circle at 60% 40%, #000 0 30%, transparent 62%);
+  mask: radial-gradient(circle at 60% 40%, #000 0 30%, transparent 62%);
+  animation: burst 1.2s cubic-bezier(.2,.9,.2,1) both;
+}
+@keyframes burst { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+h1, h2 { font-family: "Bangers", Impact, sans-serif; font-weight: 400; letter-spacing: .02em; margin: 0; }
+.kicker { position: relative; margin: 0 0 12px; font-weight: 600; color: var(--arc); font-size: 1.05rem; }
+h1 { position: relative; font-size: clamp(3rem, 9vw, 6.5rem); line-height: .92; color: var(--gold);
+  text-shadow: 4px 4px 0 var(--red), 8px 8px 0 var(--ink); max-width: 11ch; }
+.lede { position: relative; font-size: 1.25rem; max-width: 34em; margin: 24px 0 32px; color: var(--paper); }
+
+.install { position: relative; display: flex; align-items: stretch; max-width: 640px; border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink); background: var(--night-deep); }
+.install code { flex: 1; padding: 14px 16px; font: 700 .95rem/1.4 "JetBrains Mono", monospace; color: var(--gold); overflow-x: auto; white-space: nowrap; }
+.install button { border: 0; border-left: 3px solid var(--ink); background: var(--gold); color: var(--ink);
+  font: 600 1rem "IBM Plex Sans", sans-serif; padding: 0 20px; cursor: pointer; }
+.install button:active { transform: translate(2px, 2px); }
+.after { position: relative; color: var(--muted); font-size: .95rem; margin: 12px 0 0; }
+
+.screen { position: relative; margin: 48px 0 0; border: 3px solid var(--ink); box-shadow: 10px 10px 0 var(--red); background: #000; }
+.screen img { display: block; width: 100%; height: auto; }
+
+/* comic page: panels of unequal size, like a real page layout */
+.page { display: grid; gap: 14px; grid-template-columns: repeat(6, 1fr); margin: 72px 0; }
+.panel { position: relative; background: var(--night-deep); border: 3px solid var(--ink); overflow: hidden; }
+.panel img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.panel .cap { position: absolute; left: 10px; top: 10px; max-width: 80%; background: var(--gold); color: var(--ink);
+  border: 2px solid var(--ink); padding: 6px 10px; font-size: .95rem; line-height: 1.35; }
+.p-wide { grid-column: span 6; aspect-ratio: 3 / 1; }
+.p-left { grid-column: span 4; aspect-ratio: 4 / 3; }
+.p-right { grid-column: span 2; }
+.p-half { grid-column: span 3; aspect-ratio: 3 / 2; }
+@media (max-width: 720px) { .p-wide, .p-left, .p-right, .p-half { grid-column: span 6; aspect-ratio: auto; } }
+
+section { margin: 80px 0; }
+h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--paper); text-shadow: 3px 3px 0 var(--ink); margin-bottom: 16px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
+dl { margin: 0; }
+dt { font-weight: 600; color: var(--gold); margin-top: 16px; }
+dd { margin: 4px 0 0; color: var(--paper); max-width: 34em; }
+pre { margin: 0; padding: 16px; background: var(--night-deep); border: 3px solid var(--ink); overflow-x: auto;
+  font: 400 .9rem/1.5 "JetBrains Mono", monospace; color: var(--paper); }
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; max-width: 40em; }
+.steps li { counter-increment: s; position: relative; padding-left: 48px; margin: 18px 0; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; display: grid; place-items: center;
+  background: var(--red); color: var(--paper); border: 2px solid var(--ink); font-family: "Bangers", sans-serif; font-size: 1.3rem; }
+.steps code, dd code, p code { font-family: "JetBrains Mono", monospace; font-size: .9em; color: var(--gold); }
+
+footer { border-top: 3px solid var(--ink); background: var(--night-deep); padding: 32px 0 48px; color: var(--muted); font-size: .95rem; }
+footer p { max-width: 60em; margin: 8px 0; }
+.star { display: inline-block; margin-top: 8px; padding: 10px 18px; background: var(--paper); color: var(--ink);
+  border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--red); font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Clarvis · an Avengers fan mod for Claude Code</p>
+    <h1>Your terminal just joined the team</h1>
+    <p class="lede">Clarvis is a free, open-source Claude Code plugin (a mod). While Claude works, a rotating squad of pixel-art heroes animates above your prompt, with your tokens, cost and limits in plain view. When the work's done, they assemble.</p>
+    <div class="install">
+      <code id="cmd">/plugin install clarvis --marketplace shahsanket2107/clarvis</code>
+      <button type="button" id="copy" aria-label="Copy the install command">Copy</button>
+    </div>
+    <p class="after">Paste it at the Claude Code prompt, press <code>y</code>, then Enter. Needs Claude Code 2.1.287 or later.</p>
+    <figure class="screen" style="margin-left:0;margin-right:0">
+      <img src="media/hero.gif" width="1200" height="520" alt="The Clarvis band above the Claude Code prompt: a hero animates on a 3D stage while a live log of Claude's actions ticks by, then the team assembles when the task is done.">
+    </figure>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page" aria-label="What Clarvis adds">
+    <div class="panel p-wide"><img src="media/band.png" alt="The working band: a hero on a 3D stage, the tool Claude is using, a typed line of dialogue and the mission log" loading="lazy"><p class="cap">A new hero every 8 seconds, each with their own lines about your code.</p></div>
+    <div class="panel p-left"><img src="media/arcade.png" alt="The Stark Arcade title screen with five games" loading="lazy"><p class="cap">Five arcade games, playable in a pane while Claude works.</p></div>
+    <div class="panel p-right"><img src="media/stats.png" alt="The /clarvis stats mission report with tokens, cache hit rate, cost and rate limits" loading="lazy"><p class="cap">Your tokens and spend, always on screen.</p></div>
+    <div class="panel p-half"><img src="media/theater.png" alt="The comic theater's episode list" loading="lazy"><p class="cap">Ten comic episodes with panels, balloons and sound effects.</p></div>
+    <div class="panel p-half"><img src="media/moment.png" alt="The full-width moment that plays when a task finishes" loading="lazy"><p class="cap">Finish a task, and the team assembles with your time, actions and cost.</p></div>
+  </div>
+
+  <section id="install">
+    <h2>Install in a minute</h2>
+    <ol class="steps">
+      <li>Open Claude Code in your terminal. Check you're on 2.1.287 or later with <code>claude --version</code>.</li>
+      <li>At the prompt, paste <code>/plugin install clarvis --marketplace shahsanket2107/clarvis</code>.</li>
+      <li>Press <code>y</code> to add the marketplace, then Enter to install for your user. The band appears right away.</li>
+      <li>For the arcade and theater, type <code>/tui fullscreen</code> once, then <code>/clarvis play</code> or <code>/clarvis movies</code>.</li>
+    </ol>
+  </section>
+
+  <section class="cols">
+    <div>
+      <h2>Built to stay out of your way</h2>
+      <dl>
+        <dt>It only watches and draws</dt><dd>It never changes a tool call, a prompt or a permission decision.</dd>
+        <dt>Nothing leaves your machine</dt><dd>No network calls, no tracking, no processes, no reading your files.</dd>
+        <dt>Free when idle</dt><dd>Frames repaint only while something moves. At rest it does nothing.</dd>
+        <dt>Your choice of volume</dt><dd><code>/clarvis calm</code> keeps the art and drops the motion. <code>/clarvis off</code> brings back the stock look.</dd>
+      </dl>
+    </div>
+    <div>
+      <h2>Commands</h2>
+<pre>/clarvis            the briefing
+/clarvis stats      tokens, cache, cost, limits
+/clarvis play       the arcade
+/clarvis movies     the theater
+/clarvis calm       no motion
+/clarvis off        stock Claude Code</pre>
+    </div>
+  </section>
+  <section id="faq">
+    <h2>Questions</h2>
+    <dl>
+        <dt>What is Clarvis?</dt><dd>Clarvis is a free, open-source Claude Code plugin, a mod, that draws an Avengers-themed heads-up display above the Claude Code prompt: rotating pixel-art heroes while Claude works, live token, cache and cost tracking, a pixel arcade and a comic theater.</dd>
+        <dt>How do I install Clarvis in Claude Code?</dt><dd>At the Claude Code prompt, run /plugin install clarvis --marketplace shahsanket2107/clarvis, press y to add the marketplace, then Enter. It needs Claude Code 2.1.287 or later.</dd>
+        <dt>Does Clarvis track Claude Code token usage and cost?</dt><dd>Yes. The band shows context used, tokens in and out, cache hit rate, the session&#x27;s cost and your 5-hour rate limit, and /clarvis stats prints a full usage report with lifetime totals.</dd>
+        <dt>Does Clarvis send any data anywhere?</dt><dd>No. It makes no network requests, has no analytics, and never changes a tool call, a prompt or a permission decision. It only watches and draws.</dd>
+        <dt>Is Clarvis an official Marvel or Anthropic product?</dt><dd>No. Clarvis is an unofficial, non-commercial fan project. It isn&#x27;t made, licensed or endorsed by Marvel, Disney or Anthropic, and all of its art is original.</dd>
+    </dl>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="star" href="https://github.com/shahsanket2107/clarvis">Star it on GitHub</a>
+    <p>Clarvis is an unofficial, non-commercial fan project. It isn't made, licensed or endorsed by Marvel, Disney or Anthropic. Characters and names belong to their owners. All art is original. <a href="https://github.com/shahsanket2107/clarvis/blob/main/NOTICE.md">Read the full notice</a>.</p>
+    <p>Code under the MIT license. Made by Sanket Shah.</p>
+  </div>
+</footer>
+<script>
+document.getElementById('copy').addEventListener('click', async e => {
+  const b = e.currentTarget
+  try { await navigator.clipboard.writeText(document.getElementById('cmd').textContent); b.textContent = 'Copied' }
+  catch { b.textContent = 'Select and copy' }
+  setTimeout(() => { b.textContent = 'Copy' }, 1800)
+})
+</script>
+</body>
+</html>

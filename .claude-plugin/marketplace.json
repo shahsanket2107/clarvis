@@ -1,0 +1,24 @@
+{
+  "name": "clarvis",
+  "owner": {
+    "name": "Sanket Shah"
+  },
+  "description": "Clarvis: an unofficial Avengers fan mod for Claude Code.",
+  "plugins": [
+    {
+      "name": "clarvis",
+      "source": "./",
+      "description": "Clarvis: an unofficial Avengers fan mod for Claude Code, with a live HUD, token, cost and rate-limit metrics, end-of-turn moments, a pixel arcade and a comic theater. Free, not affiliated with Marvel or Disney.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "category": "fun",
+      "tags": [
+        "mod",
+        "hud",
+        "fan-project",
+        "usage",
+        "arcade"
+      ]
+    }
+  ]
+}

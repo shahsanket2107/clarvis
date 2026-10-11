@@ -1,0 +1,11 @@
+name: Feature idea
+description: A hero, game, episode, metric or anything else you'd love to see
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What would you see or do? Why would it be fun or useful?
+    validations:
+      required: true

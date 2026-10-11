@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Rights holder request
+    url: https://github.com/shahsanket2107/clarvis/blob/main/NOTICE.md#rights-holders
+    about: Represent a rights holder? See how requests are handled.
