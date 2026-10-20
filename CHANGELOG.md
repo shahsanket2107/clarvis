@@ -3,7 +3,14 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
-## [1.0.0] - Unreleased
+## [1.0.1] - 2026-10-20
+
+### Changed
+- Shorter plugin description (200 characters or fewer, so mod catalogs accept it).
+- The README says 30 characters, not 30 heroes: the cast includes villains.
+- `/clarvis sound` gives a clearer one-line reply.
+
+## [1.0.0] - 2026-10-11
 
 First public release of Clarvis, an unofficial Avengers fan mod for Claude Code.
 

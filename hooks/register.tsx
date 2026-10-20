@@ -620,7 +620,7 @@ async function cmd_notify($: any, _e: any, _v: string, rest: string): Promise<{ 
 }
 async function cmd_sound($: any, _e: any, _v: string, rest: string): Promise<{ text: string }> {
     const where = fullMode ? '' : ` You are in ${calmMode ? 'calm' : liteMode ? 'lite' : 'off'} mode, which stays silent (/clarvis full).`
-    if (rest !== 'on' && rest !== 'off') return { text: `Sound is ${soundOn ? 'on' : 'off'}. Use /clarvis sound ${soundOn ? 'off to mute' : 'on to turn it on'} (or /clarvis sound ${soundOn ? 'on' : 'off'} to set it). ${SOUND_NOTE}${where}` }
+    if (rest !== 'on' && rest !== 'off') return { text: `Sound is ${soundOn ? 'on' : 'off'}. Use /clarvis sound ${soundOn ? 'off to mute it' : 'on to turn it back on'}. ${SOUND_NOTE}${where}` }
     soundOn = rest === 'on'; await $.store.set('sound', rest)
     if (soundOn) playSound($, 'coin')
     return { text: `Sound ${rest}. ${soundOn ? 'Original chiptune clips, a quiet volume. ' : ''}${SOUND_NOTE}${soundOn ? where : ''}` }

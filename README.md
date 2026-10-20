@@ -35,7 +35,7 @@ Paste that at the Claude Code prompt, press `y`, then Enter. That's it. Try `/cl
 **Clarvis** (Claude + J.A.R.V.I.S.) is a Claude Code plugin, a *mod*, that turns the space above your prompt into Tony Stark's
 heads-up display: a statusline-style HUD for token usage and cost, plus heroes, games and comics while Claude works.
 
-- **A hero for every moment.** While Claude works, a rotating cast of 30 heroes takes a 3D stage: Iron Man, Thor, Hulk,
+- **A hero for every moment.** While Claude works, a rotating cast of 30 characters takes a 3D stage: Iron Man, Thor, Hulk,
   Spider-Man, Loki, the Guardians and more, a new one every 8 seconds. Each roasts what Claude is *actually* doing.
 - **CLAUVENGERS, ASSEMBLE!** Finish a task and the team assembles with your time, actions and cost. Commit, and it says
   *"Commit a1b2c3d is in the books."* Turn your tests green: *"Tests: 142 passed. Bugs, dusted."*
