@@ -8,8 +8,8 @@
     {
       "name": "clarvis",
       "source": "./",
-      "description": "Clarvis: an unofficial Avengers fan mod for Claude Code, with a live HUD, token, cost and rate-limit metrics, end-of-turn moments, a pixel arcade and a comic theater. Free, not affiliated with Marvel or Disney.",
-      "version": "1.0.0",
+      "description": "Clarvis: an unofficial Avengers fan mod for Claude Code. Live token, cost and rate-limit gauges, end-of-turn moments, a pixel arcade and comics. Free, not affiliated with Marvel or Disney.",
+      "version": "1.0.1",
       "license": "MIT",
       "category": "fun",
       "tags": [
